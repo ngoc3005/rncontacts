@@ -7,7 +7,11 @@ const DrawerNavigator = () => {
   const Drawer = createDrawerNavigator();
   return (
     <Drawer.Navigator drawerType="back">
-      <Drawer.Screen name={HOME_NAVIGATIOR} component={HomeNavigator} />
+      <Drawer.Screen
+        name={HOME_NAVIGATIOR}
+        component={HomeNavigator}
+        options={{headerShown: false}}
+      />
     </Drawer.Navigator>
   );
 };
