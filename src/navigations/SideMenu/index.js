@@ -11,6 +11,8 @@ import Container from '../../components/common/Container';
 import styles from './styles';
 import {CONTACT_DETAIL, SETTINGS} from '../../constants/routeNames';
 import logoutUser from '../../context/actions/auth/logoutUser';
+import Icon from 'react-native-vector-icons/Fontisto';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 const SideMenu = ({navigation, authDispath}) => {
   const handleLogout = () => {
@@ -30,21 +32,28 @@ const SideMenu = ({navigation, authDispath}) => {
   };
   const menuItems = [
     {
-      icon: <Text>T</Text>,
+      icon: <Icon size={17} name="player-settings" />,
       name: 'Setting',
       onPress: () => {
         navigation.navigate(SETTINGS);
       },
     },
     {
-      icon: <Text>T</Text>,
+      icon: <MaterialIcons size={17} name="schedule-send" />,
       name: 'Xin nghỉ phép',
       onPress: () => {
         navigation.navigate(CONTACT_DETAIL);
       },
     },
     {
-      icon: <Text>T</Text>,
+      icon: <Icon size={17} name="calendar" />,
+      name: 'Chấm công',
+      onPress: () => {
+        navigation.navigate(CONTACT_DETAIL);
+      },
+    },
+    {
+      icon: <MaterialIcons size={17} name="logout" />,
       name: 'Logout',
       onPress: handleLogout,
     },
@@ -58,7 +67,7 @@ const SideMenu = ({navigation, authDispath}) => {
           source={require('../../assets/images/logo.png')}
           style={styles.logoImage}
         />
-        <View style={{paddingHorizontal: 70}}>
+        <View style={{paddingHorizontal: 50}}>
           {menuItems.map(({name, icon, onPress}) => (
             <TouchableOpacity onPress={onPress} key={name} style={styles.item}>
               {icon}
