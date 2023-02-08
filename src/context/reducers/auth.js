@@ -1,4 +1,4 @@
-import {REGISTER_FAIL} from '../../constants/actionTypes';
+import {LOGOUT_USER, REGISTER_FAIL} from '../../constants/actionTypes';
 import {LOGIN_START} from '../../constants/actionTypes';
 import {LOGIN_FAIL} from '../../constants/actionTypes';
 import {LOGIN_SUCCESS} from '../../constants/actionTypes';
@@ -28,6 +28,13 @@ const auth = (state, {type, payload}) => {
         loading: false,
         data: payload,
         isLoggedIn: true,
+      };
+    case LOGOUT_USER:
+      return {
+        ...state,
+        loading: false,
+        data: null,
+        isLoggedIn: false,
       };
     case REGISTER_FAIL:
     case LOGIN_FAIL:

@@ -10,8 +10,9 @@ import React from 'react';
 import Container from '../../components/common/Container';
 import styles from './styles';
 import {CONTACT_DETAIL, SETTINGS} from '../../constants/routeNames';
+import logoutUser from '../../context/actions/auth/logoutUser';
 
-const SideMenu = ({navigation}) => {
+const SideMenu = ({navigation, authDispath}) => {
   const handleLogout = () => {
     navigation.toggleDrawer();
     Alert.alert('Logout!', 'Are you sure you want to logout?', [
@@ -21,7 +22,9 @@ const SideMenu = ({navigation}) => {
       },
       {
         text: 'OK',
-        onPress: () => {},
+        onPress: () => {
+          logoutUser()(authDispath);
+        },
       },
     ]);
   };
