@@ -14,11 +14,6 @@ const Register = () => {
     authDispath,
     authState: {error, loading, data},
   } = useContext(GlobalContext);
-  React.useEffect(() => {
-    if (data) {
-      navigate(LOGIN);
-    }
-  }, [data]);
 
   useFocusEffect(
     React.useCallback(() => {
@@ -86,7 +81,9 @@ const Register = () => {
       Object.values(form).every(item => item.trim().length > 0) &&
       Object.values(errors).every(item => !item)
     ) {
-      register(form)(authDispath);
+      register(form)(authDispath)(response => {
+        navigate(LOGIN, {data: response});
+      });
     }
   };
   return (

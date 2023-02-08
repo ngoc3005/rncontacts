@@ -38,7 +38,7 @@ const SideMenu = ({navigation, authDispath}) => {
     },
     {
       icon: <Text>T</Text>,
-      name: 'Tạo đơn',
+      name: 'Xin nghỉ phép',
       onPress: () => {
         navigation.navigate(CONTACT_DETAIL);
       },

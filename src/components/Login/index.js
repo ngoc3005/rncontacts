@@ -8,7 +8,14 @@ import {useNavigation} from '@react-navigation/native';
 import {REGISTER} from '../../constants/routeNames';
 import Message from '../common/Message';
 
-const LoginComponent = ({error, onChange, loading, onSubmit}) => {
+const LoginComponent = ({
+  error,
+  form,
+  justSignedUp,
+  onChange,
+  loading,
+  onSubmit,
+}) => {
   const [isSecureTextEntry, setSecureTextEntry] = useState(true);
   const {navigate} = useNavigation();
   return (
@@ -24,6 +31,13 @@ const LoginComponent = ({error, onChange, loading, onSubmit}) => {
         <Text style={styles.subTitle}>Please login here</Text>
       </View>
       <SafeAreaView style={styles.form}>
+        {justSignedUp && (
+          <Message
+            success
+            onDismiss={() => {}}
+            message="Account created successfully"
+          />
+        )}
         {error && !error.error && (
           <Message danger onDismiss={() => {}} message="invalid credentials" />
         )}
@@ -32,6 +46,7 @@ const LoginComponent = ({error, onChange, loading, onSubmit}) => {
           label="Username"
           iconPosition="right"
           placeholder="Enter Username"
+          value={form.userName || null}
           autoCapitalize={'none'}
           onChangeText={value => {
             onChange({name: 'userName', value});
