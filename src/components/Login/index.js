@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Container from '../../components/common/Container';
 import Input from '../../components/common/Input';
 import CustomButton from '../../components/common/CustomButton';
@@ -9,6 +9,7 @@ import {REGISTER} from '../../constants/routeNames';
 import Message from '../common/Message';
 
 const LoginComponent = ({error, onChange, loading, onSubmit}) => {
+  const [isSecureTextEntry, setSecureTextEntry] = useState(true);
   const {navigate} = useNavigation();
   return (
     <Container>
@@ -39,8 +40,15 @@ const LoginComponent = ({error, onChange, loading, onSubmit}) => {
         <Input
           label="Password"
           autoCapitalize={'none'}
-          secureTextEntry={true}
-          icon={<Text>Show</Text>}
+          secureTextEntry={isSecureTextEntry}
+          icon={
+            <TouchableOpacity
+              onPress={() => {
+                setSecureTextEntry(prev => !prev);
+              }}>
+              <Text>{isSecureTextEntry ? 'Show' : 'Hide'}</Text>
+            </TouchableOpacity>
+          }
           placeholder="Enter Password"
           iconPosition="right"
           onChangeText={value => {

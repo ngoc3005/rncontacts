@@ -12,7 +12,6 @@ const Login = () => {
 
   const onSubmit = () => {
     if (form.userName && form.password) {
-      console.log('221312');
       loginUser(form)(authDispath);
     }
   };
