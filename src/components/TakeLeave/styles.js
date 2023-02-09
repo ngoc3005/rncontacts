@@ -34,4 +34,5 @@ export default StyleSheet.create({
   infoText: {
     fontSize: 17,
   },
+  container: {flex: 1, backgroundColor: 'white'},
 });

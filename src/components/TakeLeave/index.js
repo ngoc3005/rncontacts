@@ -7,6 +7,7 @@ import styles from './styles';
 import {useNavigation} from '@react-navigation/native';
 import {LOGIN} from '../../constants/routeNames';
 import Message from '../common/Message';
+import CustomDatePicker from './datepicker';
 
 const TakeLeaveComponent = ({
   onSubmit,
@@ -17,7 +18,6 @@ const TakeLeaveComponent = ({
   errors,
 }) => {
   const {navigate} = useNavigation();
-  const [isSecureTextEntry, setSecureTextEntry] = useState(true);
   return (
     <Container>
       <Image
@@ -29,7 +29,7 @@ const TakeLeaveComponent = ({
           <Message retry danger retryFn={onSubmit} message={error?.error} />
         )}
         <Input
-          label="Firt Name"
+          label="Nhập họ tên"
           iconPosition="right"
           placeholder="Enter Firt Name"
           onChangeText={value => {
@@ -38,7 +38,7 @@ const TakeLeaveComponent = ({
           error={errors.firstName || error?.first_name?.[0]}
         />
         <Input
-          label=""
+          label="Lý do xin nghỉ"
           iconPosition="right"
           placeholder="Enter Last Name"
           error={errors.lastName || error?.last_name?.[0]}
@@ -47,7 +47,7 @@ const TakeLeaveComponent = ({
           }}
         />
         <Input
-          label="Email"
+          label="Người được trình"
           iconPosition="right"
           placeholder="Enter Email"
           error={errors.email || error?.email?.[0]}
@@ -55,13 +55,13 @@ const TakeLeaveComponent = ({
             onChange({name: 'email', value});
           }}
         />
-        <Input
-          label="Username"
-          iconPosition="right"
-          placeholder="Enter Username"
-          error={errors.userName || error?.username?.[0]}
-          onChangeText={value => {
-            onChange({name: 'userName', value});
+        <Text>Chọn thời gian xin nghỉ phép</Text>
+        <CustomDatePicker
+          textStyle={{
+            paddingVertical: 15,
+            paddingHorizontal: 10,
+            borderColor: 'gray',
+            borderWidth: 1,
           }}
         />
         <CustomButton
@@ -69,7 +69,7 @@ const TakeLeaveComponent = ({
           disabled={loading}
           onPress={onSubmit}
           primary
-          title="Submit"
+          title="Gửi"
         />
       </SafeAreaView>
     </Container>

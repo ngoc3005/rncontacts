@@ -16,16 +16,6 @@ const TakeLeave = () => {
     authState: {error, loading, data},
   } = useContext(GlobalContext);
 
-  useFocusEffect(
-    React.useCallback(() => {
-      return () => {
-        if (data || error) {
-          clearAuthState()(authDispath);
-        }
-      };
-    }, [data, error]),
-  );
-
   const onChange = ({name, value}) => {
     setForm({...form, [name]: value});
 
