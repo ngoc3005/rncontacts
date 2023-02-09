@@ -1,11 +1,16 @@
-import {Text, View} from 'react-native';
-import React from 'react';
+import React, {useContext, useEffect, useState} from 'react';
+import TimeKeepingComponent from '../../components/TimeKeeping';
+import {GlobalContext} from '../../context/Provider';
 
-const CreateContact = () => {
+const TimeKeeping = () => {
+  const {
+    authDispath,
+    authState: {error, loading},
+  } = useContext(GlobalContext);
+
+  const onSubmit = () => {};
   return (
-    <View>
-      <Text>Hi from CreateContact</Text>
-    </View>
+    <TimeKeepingComponent onSubmit={onSubmit} error={error} loading={loading} />
   );
 };
-export default CreateContact;
+export default TimeKeeping;

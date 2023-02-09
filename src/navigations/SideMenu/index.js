@@ -9,7 +9,11 @@ import {
 import React from 'react';
 import Container from '../../components/common/Container';
 import styles from './styles';
-import {CONTACT_DETAIL, SETTINGS} from '../../constants/routeNames';
+import {
+  CONTACT_DETAIL,
+  CREATE_CONTACT,
+  SETTINGS,
+} from '../../constants/routeNames';
 import logoutUser from '../../context/actions/auth/logoutUser';
 import Icon from 'react-native-vector-icons/Fontisto';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
@@ -49,7 +53,7 @@ const SideMenu = ({navigation, authDispath}) => {
       icon: <Icon size={17} name="calendar" />,
       name: 'Chấm công',
       onPress: () => {
-        navigation.navigate(CONTACT_DETAIL);
+        navigation.navigate(CREATE_CONTACT);
       },
     },
     {
