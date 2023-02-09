@@ -4,7 +4,7 @@ import Container from '../../components/common/Container/index';
 import {useNavigation} from '@react-navigation/native';
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
 
-const Contacts = () => {
+const Home = () => {
   const {setOptions, toggleDrawer} = useNavigation();
   React.useEffect(() => {}, []);
   setOptions({
@@ -23,4 +23,4 @@ const Contacts = () => {
     </Container>
   );
 };
-export default Contacts;
+export default Home;
