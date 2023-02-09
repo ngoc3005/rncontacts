@@ -6355,6 +6355,11 @@
   "resolved" "https://registry.npmjs.org/react-native-gradle-plugin/-/react-native-gradle-plugin-0.71.14.tgz"
   "version" "0.71.14"
 
+"react-native-public-ip@^1.0.2":
+  "integrity" "sha512-GElvYvHLo/BCRFlXARBTq9Dwx526d1zxnyqlSfp1RQwA1yAucFbabfm6nAA3c2Nnq2OdfL4dbFGSeArM2Hdr2g=="
+  "resolved" "https://registry.npmjs.org/react-native-public-ip/-/react-native-public-ip-1.0.2.tgz"
+  "version" "1.0.2"
+
 "react-native-reanimated@^2.14.4", "react-native-reanimated@>= 1.0.0":
   "integrity" "sha512-DquSbl7P8j4SAmc+kRdd75Ianm8G+IYQ9T4AQ6lrpLVeDkhZmjWI0wkutKWnp6L7c5XNVUrFDUf69dwETLCItQ=="
   "resolved" "https://registry.npmjs.org/react-native-reanimated/-/react-native-reanimated-2.14.4.tgz"
@@ -6389,7 +6394,7 @@
     "prop-types" "^15.7.2"
     "yargs" "^16.1.1"
 
-"react-native@*", "react-native@^0.0.0-0 || 0.60 - 0.71 || 1000.0.0", "react-native@^0.71.2":
+"react-native@*", "react-native@^0.0.0-0 || 0.60 - 0.71 || 1000.0.0", "react-native@^0.71.2", "react-native@>=0.18.0":
   "integrity" "sha512-ZSianM+j+09LoEdVIhrAP/uP8sQhT7dH6olCqM2xlpxmfCgA5NubsK6NABIuZiBlmmqjigyijm5Y/GhBIHDvEg=="
   "resolved" "https://registry.npmjs.org/react-native/-/react-native-0.71.2.tgz"
   "version" "0.71.2"
