@@ -39,6 +39,7 @@ const Login = () => {
       loading={loading}
       justSignedUp={justSignedUp}
     />
+    
   );
 };
 export default Login;
