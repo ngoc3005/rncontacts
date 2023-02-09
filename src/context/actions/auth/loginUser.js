@@ -15,6 +15,7 @@ export default ({password, userName}) =>
       .then(res => {
         AsyncStorage.setItem('token', res.data.data.token);
         AsyncStorage.setItem('user', res.data.data.name);
+        AsyncStorage.setItem('userId', JSON.stringify(res.data.data.id));
         dispath({
           type: LOGIN_SUCCESS,
           payload: res.data,
