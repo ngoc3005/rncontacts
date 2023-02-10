@@ -9,6 +9,7 @@ import Message from '../common/Message';
 
 const TimeKeepingComponent = ({error, justSignedUp, loading, onSubmit}) => {
   const {navigate} = useNavigation();
+  
   return (
     <Container>
       <Image
@@ -29,7 +30,8 @@ const TimeKeepingComponent = ({error, justSignedUp, loading, onSubmit}) => {
           <Message danger onDismiss={() => {}} message="invalid credentials" />
         )}
         {error?.error && <Message danger onDismiss message={error?.error} />}
-
+        
+        
         <CustomButton
           disabled={loading}
           onPress={onSubmit}
