@@ -11,8 +11,7 @@ import Container from '../../components/common/Container';
 import styles from './styles';
 import {SETTINGS, TAKELEAVE, TIMEKEEPING} from '../../constants/routeNames';
 import logoutUser from '../../context/actions/auth/logoutUser';
-import Icon from 'react-native-vector-icons/Fontisto';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import Icon from '../../components/common/Icon';
 
 const SideMenu = ({navigation, authDispath}) => {
   const handleLogout = () => {
@@ -32,28 +31,28 @@ const SideMenu = ({navigation, authDispath}) => {
   };
   const menuItems = [
     {
-      icon: <Icon size={17} name="player-settings" />,
+      icon: <Icon type="fontisto" size={17} name="player-settings" />,
       name: 'Setting',
       onPress: () => {
         navigation.navigate(SETTINGS);
       },
     },
     {
-      icon: <MaterialIcons size={17} name="schedule-send" />,
+      icon: <Icon type="material" size={17} name="schedule-send" />,
       name: 'Xin nghỉ phép',
       onPress: () => {
         navigation.navigate(TAKELEAVE);
       },
     },
     {
-      icon: <Icon size={17} name="calendar" />,
+      icon: <Icon type="fontisto" size={17} name="calendar" />,
       name: 'Chấm công',
       onPress: () => {
         navigation.navigate(TIMEKEEPING);
       },
     },
     {
-      icon: <MaterialIcons size={17} name="logout" />,
+      icon: <Icon type="material" size={17} name="logout" />,
       name: 'Logout',
       onPress: handleLogout,
     },
