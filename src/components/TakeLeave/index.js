@@ -28,33 +28,42 @@ const TakeLeaveComponent = ({
           <Message retry danger retryFn={onSubmit} message={error?.error} />
         )}
         <Input
-          label="Nhập họ tên"
+          label="Người đề nghị"
           iconPosition="right"
-          placeholder="Enter Firt Name"
+          placeholder="Nhập tên người đề nghị"
           onChangeText={value => {
-            onChange({name: 'firstName', value});
+            onChange({name: 'nguoi_de_nghi', value});
           }}
-          error={errors.firstName || error?.first_name?.[0]}
+          error={errors.nguoi_de_nghi || error?.nguoi_de_nghi?.[0]}
         />
         <Input
-          label="Lý do xin nghỉ"
+          label="Phòng ban"
           iconPosition="right"
-          placeholder="Enter Last Name"
-          error={errors.lastName || error?.last_name?.[0]}
+          placeholder="Nhập Phòng ban"
+          error={errors.phong_ban || error?.phong_ban?.[0]}
           onChangeText={value => {
-            onChange({name: 'lastName', value});
+            onChange({name: 'phong_ban', value});
           }}
         />
         <Input
-          label="Người được trình"
+          label="Lý do"
           iconPosition="right"
-          placeholder="Enter Email"
-          error={errors.email || error?.email?.[0]}
+          placeholder="Xin mời điền lý do"
+          error={errors.ly_do || error?.ly_do?.[0]}
           onChangeText={value => {
-            onChange({name: 'email', value});
+            onChange({name: 'ly_do', value});
           }}
         />
-        <Text>Chọn thời gian xin nghỉ phép</Text>
+        <Input
+          label="Chức vụ"
+          iconPosition="right"
+          placeholder="Xin mời điền Chức vụ"
+          error={errors.chuc_vu || error?.chuc_vu?.[0]}
+          onChangeText={value => {
+            onChange({name: 'chuc_vu', value});
+          }}
+        />
+        <Text>Ngày nghỉ</Text>
         <CustomDatePicker
           textStyle={{
             paddingVertical: 15,
