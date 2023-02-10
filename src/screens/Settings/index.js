@@ -1,11 +1,8 @@
-import {Text, View} from 'react-native';
 import React from 'react';
+import SettingComponent from '../../components/Setting';
 
 const Setting = () => {
-  return (
-    <View>
-      <Text>Hi from Setting</Text>
-    </View>
-  );
+  const settingOption = [{}];
+  return <SettingComponent />;
 };
 export default Setting;

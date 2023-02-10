@@ -5,7 +5,6 @@ import CustomButton from '../common/CustomButton';
 import {Image, SafeAreaView, Text, TouchableOpacity, View} from 'react-native';
 import styles from './styles';
 import {useNavigation} from '@react-navigation/native';
-import {LOGIN} from '../../constants/routeNames';
 import Message from '../common/Message';
 import CustomDatePicker from './datepicker';
 
