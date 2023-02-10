@@ -2,7 +2,7 @@ import {Text, TouchableOpacity} from 'react-native';
 import React from 'react';
 import Container from '../../components/common/Container/index';
 import {useNavigation} from '@react-navigation/native';
-import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
+import Icon from '../../components/common/Icon';
 
 const Home = () => {
   const {setOptions, toggleDrawer} = useNavigation();
@@ -13,7 +13,7 @@ const Home = () => {
         onPress={() => {
           toggleDrawer();
         }}>
-        <MaterialIcon style={{padding: 10}} size={25} name="menu" />
+        <Icon type="material" style={{padding: 10}} size={25} name="menu" />
       </TouchableOpacity>
     ),
   });
