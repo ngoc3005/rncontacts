@@ -8,3 +8,6 @@ const prodEnvironmentVarriables = {
 };
 
 export default __DEV__ ? devEnvironmentVarriables : prodEnvironmentVarriables;
+
+
+
